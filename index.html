@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon-transp.png">
+    <title>SendWhats</title>
+
+
+</head>
+
+<body style="background-image: url('/images/fundo-claro.png');">
+    <section id="pt-br">
+        <div class="container">
+
+            <div id="cabecalhoDiv">
+                <h1 id="cabecalho">SenderWhat's</h1>
+            </div>
+
+            <label id="prefixol">Prefixo:</label>
+            <input id="prefixo" range: maxlength="4" placeholder="ex:55" inputmode="numeric"></input>
+            <label id=checkboxl for="checkbox">Excluir numero após enviar</label>
+            <input type="checkbox" id="checkbox"><br>
+
+            <br>
+            <label id="numberslbl">Números:</label>
+            <textarea id="numbers" placeholder="Insira os números de WhatsApp com DDD, um em cada linha"></textarea>
+
+            <div id="divbtnNum">
+                <button id="btnSaveNum" onclick="salvaNum()">Salvar</button>
+                <button id="btnShowNum"  onclick="mostraNum()">Numeros salvos</button>
+                <button id="btnDeletenum" onclick="limpaNumeros()">Apagar números</button>
+            </div>
+            <br>
+
+            <div id="msgBtns">
+                <label id="messagelbl">Mensagem:</label>
+                <button id="espacebtn"></button>
+                <button id="limpaMsgBtn" onclick="document.getElementById('message').value='';">Limpar</button>
+                <button id="salvaMsgBtn" onclick="saveMessage()">Salvar</button>
+                <button id="mostraMsgBtn" onclick="showMessages()">Mensagens salvas</button>
+            </div>
+
+            <Textarea placeholder="Insira a sua mensagem" id="message"
+                placeholder="Insira a mensagem a ser enviada"></textarea><br>
+
+            <div id="savedMessagelist">
+                <p id="messageSaveTip" style="display: none;">clique na mensagem salva para adiciona-la na caixa de
+                    texto ou
+                    aperte em "excluir" para apagar a mensagem salva</p>
+                <ol id="message-list" style="display: none"></ol>
+            </div>
+            
+            <button id="btnGerar" onclick="generateLinks()">Gerar</button>
+            <br><br>
+            <div id="link-container"></div>
+        </div>
+    </section>
+
+    <img id="imgMenu" onclick="abrirmenu()" src="/images/config-claro.png">
+    <img id="imgInfo" onclick="abrirInfo()" src="/images/info-claro.png">
+
+    <div id="menu" style="display: none;">
+        <div class="content">
+            <h1 id="menuh1">Opções</h1>
+
+            <label class="toggle">
+                <input id="modoClaroEscuro" class="toggle-checkbox" type="checkbox" onclick="mudatema()">
+                <div class="toggle-switch"></div>
+                <span id="modoClaroEscurolbl" class="toggle-label">Tema claro</span>
+            </label>
+            <label id="idiomalbl" for="idiomaSelect">Idioma:</label>
+            <select id="idiomaSelect">
+                <option value="1">PT-BR</option>
+                <option value="2">EN-US</option>
+            </select>
+
+            <button id="menuFecharbtn" onclick="fecharmenu()">Fechar</button>
+        </div>
+
+    </div>
+
+    <div id="infoSobreposicao" style="display: none;">
+        <div id="apresentacao">
+            <h2>O SenderWhats é um aplicativo de envio de mensagens pelo WhatsApp que oferece diversas funcionalidades úteis para otimizar sua comunicação com seus contatos. Vamos dar uma olhada nas funcionalidades do aplicativo:</h2>
+
+            <p>
+                Envio de mensagem para lista de números:<br>
+                Com o SenderWhats, você pode facilmente enviar uma mensagem para vários contatos. Basta inserir a lista de números e a mensagem que deseja enviar. Em seguida, o aplicativo gera botões para cada número na lista, permitindo que você clique em cada um deles e seja direcionado ao WhatsApp com a mensagem escolhida pronta para enviar.
+            </p>
+            
+            <p>
+                Salvamento de mensagens pré-definidas:<br>
+                Para agilizar ainda mais o processo de envio de mensagens, o aplicativo permite que você salve mensagens pré-definidas para uso futuro. Isso significa que você não precisa digitar a mesma mensagem repetidamente, basta selecionar a mensagem salva e enviá-la com apenas um clique.
+            </p>
+            
+            <p>
+                Salvar números para enviar depois:<br>
+                Além de salvar mensagens, você também pode salvar números para enviar depois. Essa funcionalidade é particularmente útil se você deseja enviar mensagens para um grande número de contatos, mas não tem tempo para fazê-lo imediatamente. Salve os números e envie as mensagens quando for conveniente para você.
+            </p>
+            
+            <p>
+                Exclusão de números:<br>
+                Se você precisa excluir alguns contatos da sua lista de envio, o aplicativo permite que você marque a caixa para excluir os números tanto da caixa de texto como dos botões gerados ao clicar. Isso significa que você pode personalizar sua lista de envio de acordo com suas necessidades específicas.
+            </p>
+            
+            <p>
+                Temas:<br>
+                O aplicativo oferece dois temas diferentes para personalizar sua experiência de uso: modo claro e modo escuro. Isso permite que você escolha o tema que melhor se adapta às suas preferências de visualização.
+            </p>
+            
+            <p>
+                Idiomas:<br>
+                O aplicativo também oferece suporte a dois idiomas diferentes: português e inglês. Isso significa que você pode escolher o idioma que prefere usar para interagir com o aplicativo.
+            </p>
+            
+            <h2>Essas são as principais funcionalidades do SenderWhats. Esperamos que ajude na comunicação com seus contatos no WhatsApp.</h2>
+            <button class="close-btn" onclick="fecharInfo()">Fechar</button>
+        </div>
+      </div>
+      
+</body>
+
+<script src="script.js"></script>
+
+</html>
