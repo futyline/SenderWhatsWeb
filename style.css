@@ -279,6 +279,17 @@ div {
     margin-left: 5px;
 }
 
+#imgCorta {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--azul-fundo);
+    position: fixed;
+    padding: 5px;
+    border-radius: 10%;
+    margin-top: 70px;
+    margin-left: 5px;
+}
+
 #menuFecharbtn {
     border: 1px solid var(--branco);
     width: fit-content;
@@ -398,7 +409,7 @@ div {
 }
 
 /*menu de apresentação */
-#infoSobreposicao {
+#infoSobreposicao, #cortaBaseContainer {
     position: fixed;
     top: 0;
     left: 0;
@@ -413,7 +424,7 @@ div {
     /* importante para garantir que a div se sobreponha a outros elementos */
 }
 
-#apresentacao {
+#apresentacao,#cortaBase {
     max-width: 90%;
     padding: 20px;
     background-color: var(--azul-claro);
@@ -424,6 +435,8 @@ div {
     color: var(--letras-fundo);
     margin: auto;
     margin-top: 5%;
+    border-radius: 1%;
+    text-align: center;
 }
 
 #apresentacao>p{
@@ -439,8 +452,56 @@ div {
     border: none;
     cursor: pointer;
     
+}
+  
+.close-btn:hover {
+    color: #000;
+}
+
+
+/* corta base*/
+#cortaBase>label {
+    display: block;
+    margin-bottom: 10px;
   }
   
-  .close-btn:hover {
-    color: #000;
+  #cortaBase>textarea {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
+    width: 100%;
   }
+  
+  #cortaBase button {
+        color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+  }
+  
+  #cortaBase>#resultados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+   
+  #cortaBase> #resultados p {
+    border-top: 3px solid var(--azul-fundo);
+    padding-top: 10px;
+    margin-bottom: 1px;
+  }
+  
+  #cortaBase> #resultados textarea {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    border:2px solid var(--preto-claro);
+  }
+  
