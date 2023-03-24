@@ -374,8 +374,10 @@ btnDividir.addEventListener('click', () => {
       const copyButton = document.createElement('button');
       copyButton.textContent = 'Colar na Pagina Principal';
       copyButton.addEventListener('click', () => {
+        document.getElementById("cortaBaseContainer").value = ""
         const sublistaTextarea = sublistaDiv.querySelector(`#sublista-${i}`);
         document.getElementById('numbers').value = sublistaTextarea.value.trim();
+        document.getElementById("cortaBaseContainer").style = "display:none"
       });
   
       sublistaDiv.appendChild(copyButton);
